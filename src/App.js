@@ -1,7 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchData } from './fetchDataStore';
+
 function App() {
+  // Note: the store instance is defined in parent component: index.js
+  const dispatch = useDispatch();
+  const state = useSelector(state => state.fetchData.state);
+
+  async function handleClick() {
+    dispatch(fetchData());
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +28,8 @@ function App() {
         >
           Learn React
         </a>
+        <p>{state}</p>
+        <button onClick={handleClick}>Click</button>
       </header>
     </div>
   );
