@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchData } from './fetchDataStore';
+import { fetchData } from './fetchData';
 
 function App() {
   // Note: the store instance is defined in parent component: index.js
